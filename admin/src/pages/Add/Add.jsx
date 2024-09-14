@@ -13,7 +13,7 @@ const Add = () => {
   const [data, setData] = useState({
     name: '',
     description: '',
-    category: 'Salad',
+    category: '',
     price: '',
   })
 
@@ -37,7 +37,7 @@ const Add = () => {
       setData({
         name: '',
         description: '',
-        category: 'Salad',
+        category: '',
         price: '',
       })
       setImage(false)
@@ -69,11 +69,13 @@ const Add = () => {
           <div className="add-category flex-col">
             <p>Product category</p>
             <select onChange={onChangehandler} name="category" id="category">
+              <option value=''>none</option>
               <option value="Salad">Salad</option>
               <option value="Rolls">Rolls</option>
+              <option value="Deserts">Deserts</option>
               <option value="Sandwich">Sandwich</option>
               <option value="Cake">Cake</option>
-              <option value="Pure-Veg">Pure Veg</option>
+              <option value="Pure Veg">Pure Veg</option>
               <option value="Pasta">Pasta</option>
               <option value="Noodles">Noodles</option>
             </select>
