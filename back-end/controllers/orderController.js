@@ -1,65 +1,4 @@
-// import orderModel from "../models/orderModel.js";
-// import userModel from "../models/userModel.js";
 
-// import Razorpay from "razorpay";
-
-// const razorpay = new Razorpay(process.env.RAZOR_PAY_SECRET_KEY);
-
-
-// // placing user order from front-end
-// const placeOrder = async (req, res) => {
-
-//     const frontend_url = 'http://localhost:5173';
-
-
-//     try {
-//         const newOrder = new orderModel({
-//             userId: req.body.userId,
-//             items: req.body.items,
-//             amount: req.body.amount,
-//             address: req.body.address
-//         });
-//         await newOrder.save();
-//         await userModel.findByIdAndUpdate({ _id: req.body.userId }, { cartData: {} });
-
-//         const line_items = req.body.items.map((item) => ({
-//             price_data:{
-//                 currency: "INR",
-//                 product_data: {
-//                     name: item.name
-//                 },
-//                 unit_amount: item.price * 100 * 80
-//             },
-//             quantity: item.quantity
-//         }));
-
-//         line_items.push({
-//             price_data:{
-//                 currency: "INR",
-//                 product_data: {
-//                     name: "Delivery Charge"
-//                 },
-//                 unit_amount: 2 * 100 * 80
-//             },
-//             quantity: 1
-//         });
-
-//         const session = await stripe.checkout.sessions.create({
-//             payment_method_types: ["card"],
-//             line_items: line_items,
-//             mode: "payment",
-//             success_url:`${frontend_url}/verify?success=true&orderId=${newOrder._id}`,
-//             cancel_url:`${frontend_url}/verify?success=false&orderId=${newOrder._id}` 
-//         });
-
-//         res.json({success: true, session_url: session.url});
-//     } catch (error) {
-//         console.log(error);
-//         res.json({success: false, message: "error"});
-//     }
-// }
-
-// export { placeOrder }
 
 
 import orderModel from "../models/orderModel.js";
@@ -78,7 +17,7 @@ const placeOrder = async (req, res) => {
     });
 
 
-    const frontend_url = 'http://localhost:5173';
+    const frontend_url = 'http://localhost:5174';
 
     try {
         // Create a new order in your database
