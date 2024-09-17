@@ -152,4 +152,15 @@ const userOrders = async (req, res) => {
     }
 }
 
-export { placeOrder , verifyPayment , userOrders };
+// Listing all orders for admin panel
+const listOrders = async (req, res) => {
+    try {
+        const order = await orderModel.find({});
+        res.json({ success: true, data : order });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Error in fetching orders" });
+    }
+}
+
+export { placeOrder , verifyPayment , userOrders , listOrders };
