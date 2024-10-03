@@ -17,7 +17,7 @@ const placeOrder = async (req, res) => {
     });
 
 
-    const frontend_url = 'https://food-delivery-front-end-vcul.onrender.com';
+    const frontend_url = process.env.FRONT_END_URL;
 
     try {
         // Create a new order in your database

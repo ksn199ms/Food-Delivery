@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
 
-  const url = 'https://food-delivery-back-end-iy5y.onrender.com'
+  const url = import.meta.env.VITE_BACK_END_URL
 
   return (
     <div>
