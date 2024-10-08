@@ -5,6 +5,8 @@ import { assets } from '../../assets/assets'
 import {Link, useNavigate} from 'react-router-dom'
 import { StoreContext } from '../../context/StoreContext'
 
+import {toast} from 'react-toastify'
+
 const Navbar = ({setShowLogin}) => {
 
     const [menu,setMenu] = useState("")
@@ -31,8 +33,13 @@ const Navbar = ({setShowLogin}) => {
         <div className="navbar-right">
             <img src={assets.search_icon} alt="" />
             <div className="navbar-search-icon">
-                <Link to={"/cart"}><img src={assets.basket_icon} alt="" /></Link> 
-                <div className={getTotalCartAmount() > 0 ? "dot" : ""}></div>
+                {
+                    token ? <div><Link to={"/cart"}><img src={assets.basket_icon} alt="" /></Link>
+                    <div className={getTotalCartAmount() > 0 ? "dot" : ""}></div>
+                    </div> 
+                    : <img onClick={() => toast.error("Please login first")} src={assets.basket_icon} alt="" />
+                }
+                
             </div>
             {!token ? <button onClick={() => setShowLogin(true)}>Login</button> 
             : <div className='navbar-profile'>
