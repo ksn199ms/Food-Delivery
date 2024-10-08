@@ -31,7 +31,7 @@ const PlaceOrder = () => {
 
   const onPlaceOrder = async (e) => {
     e.preventDefault();
-  
+
     let orderItems = [];
     food_list.map((item) => {
       if (cartItems[item._id] > 0) {
@@ -67,9 +67,9 @@ const PlaceOrder = () => {
             window.location.replace(frontendSuccessUrl);
           },
           prefill: {
-            name: "Customer Name",  // You can add pre-filled customer details here
-            email: "customer@example.com",  // Pre-filled email
-            contact: "9999999999"  // Pre-filled contact number
+            name: `${data.firstName} ${data.lastName}`,  // You can add pre-filled customer details here
+            email: data.email,  // Pre-filled email
+            contact: data.phone  // Pre-filled contact number
           },
           theme: {
             color: "#3399cc"
@@ -101,6 +101,7 @@ const PlaceOrder = () => {
       navigate('/cart')
     }else if(getTotalCartAmount() === 0){
       navigate('/cart')
+      toast.warning("please add items to cart")
     }
   },[token])
   
@@ -144,7 +145,7 @@ const PlaceOrder = () => {
               <b>${getTotalCartAmount() > 0 ? getTotalCartAmount()+2 : 0}</b>
             </div>
           </div>
-          <button type='submit' >PROCEED TO PAYMENT</button>
+          <button type='submit'>PROCEED TO PAYMENT</button>
         </div>
       </div>
     </form>
