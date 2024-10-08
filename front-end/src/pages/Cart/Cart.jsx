@@ -25,6 +25,7 @@ const Cart = () => {
         <br />
         <hr />
         {
+          getTotalCartAmount() > 0 ? 
           food_list.map((item,index) => {
             if(cartItems[item._id]>0){
               return (
@@ -41,7 +42,8 @@ const Cart = () => {
                 </div>
               )
             }
-          })  
+          })
+          : <h1 className='cart-empty'>---------- Cart is empty ----------</h1> 
         }
       </div>
 
