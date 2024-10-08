@@ -39,6 +39,16 @@
     border-radius: 50px;
 }
 
+.btn{
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+    transition-duration: 0.5s;
+    transition-behavior: smooth;
+}
+
 @media (max-width: 1050px){
 
     .header-contents{
