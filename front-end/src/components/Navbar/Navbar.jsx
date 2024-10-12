@@ -22,15 +22,19 @@ const Navbar = ({setShowLogin}) => {
         toast.success("Logged out successfully")
     }
 
+    const navigateTo = (section) => {
+        navigate(`/#${section}`)
+    }
+
   return (
     <div className='navbar'>
         {/* <img src={assets.logo} alt="" />  */}
         <Link to={"/"}><h1  className='logo'>TastyTrack.</h1></Link>
         <ul className="navbar-menu">
             <Link to={"/"} onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>home</Link>
-            <a href='#explore-menu' onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>menu</a>
-            <a href='#app-download' onClick={() => setMenu("mobile-app")} className={menu === "mobile-app" ? "active" : ""}>mobile-app</a>
-            <a href='#footer' onClick={() => setMenu("contact-us")} className={menu === "contact-us" ? "active" : ""}>contact us</a>
+            <a href='#explore-menu' onClick={() => {setMenu("menu"); navigateTo('explore-menu')}} className={menu === "menu" ? "active" : ""}>menu</a>
+            <a href='#app-download' onClick={() => {setMenu("mobile-app"); navigateTo('app-download')}} className={menu === "mobile-app" ? "active" : ""}>mobile-app</a>
+            <a href='#footer' onClick={() => {setMenu("contact-us"); }} className={menu === "contact-us" ? "active" : ""}>contact us</a>
         </ul>
         <div className="navbar-right">
             <img src={assets.search_icon} alt="" />
