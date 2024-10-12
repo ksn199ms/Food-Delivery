@@ -51,7 +51,7 @@ const Add = ({ url }) => {
         <div className="add-img-upload flex-col">
           <p>Upload Image</p>
           <label htmlFor="image">
-            <img src={image ? URL.createObjectURL(image) : assets.upload_area} alt="" />
+            <img className='img' src={image ? URL.createObjectURL(image) : assets.upload_area} alt="" />
             <input onChange={(e) => setImage(e.target.files[0])} type="file" id='image' hidden required />
           </label>
         </div>
@@ -66,7 +66,7 @@ const Add = ({ url }) => {
         <div className="add-category-price">
           <div className="add-category flex-col">
             <p>Product category</p>
-            <select onChange={onChangehandler} name="category" id="category">
+            <select onChange={onChangehandler} name="category" id="category" value={data.category} >
               <option value=''>none</option>
               <option value="Salad">Salad</option>
               <option value="Rolls">Rolls</option>
