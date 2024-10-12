@@ -51,7 +51,7 @@ const List = ({url}) => {
               <p>{item.name}</p>
               <p>{item.category}</p>
               <p>${item.price}</p>
-              <p onClick={() => removeFood(item._id)} className='cursor'>X</p>
+              <p onClick={() => {if(confirm('Are you want to delete this item?')) removeFood(item._id)}} className='cursor'>X</p>
             </div>
           ))
         }
