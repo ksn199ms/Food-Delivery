@@ -5,6 +5,7 @@ import './PlaceOrder.css'
 import { StoreContext } from '../../context/StoreContext'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 const PlaceOrder = () => {
 
@@ -97,12 +98,17 @@ const PlaceOrder = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
+    if(getTotalCartAmount() === 0){
+      navigate('/cart')
+      toast.warning("please add items to cart")
+    }else{
     if(!token){
       navigate('/cart')
     }else if(getTotalCartAmount() === 0){
       navigate('/cart')
       toast.warning("please add items to cart")
     }
+  }
   },[token])
   
 
