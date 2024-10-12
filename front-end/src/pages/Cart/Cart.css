@@ -115,5 +115,13 @@
     .cart-promocode{
         justify-content: start;
     }
+
+    .cart-empty{
+        width: 100%;
+        padding: 10px 20px;
+        text-align: center;
+        white-space:nowrap;
+        overflow: hidden;
+    }
     
 }
