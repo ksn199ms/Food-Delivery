@@ -3,7 +3,7 @@
     grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
     align-items: start;
     gap: 30px;
-    border: 1px solid tomato;
+    border: 1px solid #219EBC;
     padding: 20px;
     margin: 30px 0px;
     font-size: 14px;
@@ -24,8 +24,8 @@
 }
 
 .order-item select{
-    background-color: #ffe8e4;
-    border: 1 px solid tomato;
+    background-color: #e6e7f8;
+    border: 1px solid #219EBC;
     width: max(10vw,120px);
     padding: 10px;
     outline: none;
