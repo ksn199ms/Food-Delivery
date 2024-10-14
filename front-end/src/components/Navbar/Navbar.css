@@ -8,7 +8,7 @@
 .navbar .logo{
     width: 150px;
     cursor: pointer;
-    color: tomato;
+    color: #073b4c;
 }
 
 .navbar-menu{
@@ -29,7 +29,7 @@
     background: transparent;
     font-size: 16px;
     color: #49557e;
-    border: 1px solid tomato;
+    border: 1px solid #073b4c;
     padding: 10px 30px;
     border-radius: 50px;
     cursor: pointer;
@@ -37,7 +37,7 @@
 }
 
 .navbar button:hover{
-    background-color: #fff4f2;
+    background-color: #e6e7f8;
 }
 
 .navbar .active {
@@ -56,7 +56,7 @@
 .dot{
     width: 10px;
     height: 10px;
-    background-color: tomato;
+    background-color: #fe4a49;
     border-radius: 50%;
     position: absolute;
     top: -5px;
@@ -80,7 +80,7 @@
     flex-direction: column;
     gap: 15px;
     padding: 12px 25px;
-    border: 1px solid tomato;
+    border: 1px solid #8ECAE6;
     border-radius: 4px;
     background-color: #fff2ef;
     outline: 2px solid white;
@@ -99,7 +99,7 @@
 }
 
 .nav-profile-dropdown li:hover{
-    color: tomato;
+    color: #FB8500;
 }
 
 @media (max-width:1050px){

@@ -2,12 +2,14 @@ import React from 'react'
 import './Footer.css'
 import { assets } from '../../assets/assets'
 
+import { Link } from 'react-router-dom'
+
 const Footer = () => {
   return (
     <div className='footer' id='footer'>
         <div className="footer-content">
             <div className="footer-content-left">
-                <img src={assets.logo} alt="" />
+                <h1  className='logo'>TastyTrack.</h1>
                 <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here</p>
                 <div className="footer-social-icons">
                     <img src={assets.facebook_icon} alt="" />
